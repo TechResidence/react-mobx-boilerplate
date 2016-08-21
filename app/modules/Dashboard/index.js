@@ -3,11 +3,20 @@ import { observer } from 'mobx-react';
 import Chart from './components/Chart';
 
 @observer(["dashboardStore"])
-export default class Notes extends Component {
-  
+export default class Dashboard extends Component {
+
   render() {
     return (
-      <Chart store={this.props.dashboardStore} />
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-sm-8">
+          <Chart store={this.props.dashboardStore} id="1"/>
+        </div>
+        <div className="col-sm-4">
+          <Chart store={this.props.dashboardStore} id="2"/>
+        </div>
+      </div>
+    </div>
     );
   }
 }

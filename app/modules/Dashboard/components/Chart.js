@@ -4,7 +4,7 @@ import keenDashboardsStyles from '../keen-dashboards.css';
 
 export default class Chart extends Component {
   componentDidMount() {
-    Plotly.newPlot('graphDiv', this.props.store.getData(), this.props.store.getLayout());
+    Plotly.newPlot(this.props.id, this.props.store.getData(), this.props.store.getLayout());
   }
 
   render() {
@@ -14,9 +14,7 @@ export default class Chart extends Component {
         Streaming Live Data Example
       </div>
       <div className={keenDashboardsStyles.chartStage}>
-        <div id="grid-1-1">
-          <div id="graphDiv"></div>
-        </div>
+        <div id={this.props.id}></div>
       </div>
       <div className={keenDashboardsStyles.chartNotes}>
         Stream live data to charts
