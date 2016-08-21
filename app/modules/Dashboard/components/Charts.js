@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import {observer} from "mobx-react";
 import ReactGridLayout from 'react-grid-layout';
-import Chart from './components/Chart';
+import Chart from './Chart';
 
-export default class Chart extends Component {
+export default class Charts extends Component {
   render() {
     var gridLayout = [
       {i: 'a', x: 0, y: 0, w: 4, h: 2, static: true},
@@ -14,13 +14,13 @@ export default class Chart extends Component {
     return (
       <ReactGridLayout className="layout" layout={gridLayout} cols={12} rowHeight={30} width={1200}>
         <div key={'a'}>
-          <Chart charttitle="1" notes="1" chartdata={this.props.store.getWeatherData()} layout={this.props.store.getWeatherLayout()} />
+          <Chart chartTitle="1" chartNotes="1" chartData={this.props.store.getWeatherData()} chartLayout={this.props.store.getWeatherLayout()} />
         </div>
         <div key={'b'}>
-          <Chart charttitle="1" notes="1" chartdata={this.props.store.getWeatherData()} layout={this.props.store.getWeatherLayout()} />
+          <Chart chartTitle="1" chartNotes="1" chartData={this.props.store.getWeatherData()} chartLayout={this.props.store.getWeatherLayout()} />
         </div>
         <div key={'c'}>
-          <Chart charttitle="1" notes="1" chartdata={this.props.store.getWeatherData()} layout={this.props.store.getWeatherLayout()} />
+          <Chart chartTitle="1" chartNotes="1" chartData={this.props.store.getWeatherData()} chartLayout={this.props.store.getWeatherLayout()} />
         </div>
       </ReactGridLayout>
     );

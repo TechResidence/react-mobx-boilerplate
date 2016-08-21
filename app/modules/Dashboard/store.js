@@ -2,6 +2,7 @@ import { observable, action } from "mobx";
 
 class DashboardStore {
   @observable weather = [];
+  @observable stockprice = [];
 
   @action getWeatherData = () => {
       this.getData('/api/chart/weather', this.weather);
@@ -9,7 +10,25 @@ class DashboardStore {
   }
   @action getWeatherLayout = () => {
     return {
-      title: 'Sales Growth',
+      title: 'Weather',
+      xaxis: {
+        title: 'Year',
+        showgrid: false,
+        zeroline: false
+      },
+      yaxis: {
+        title: 'Percent',
+        showline: false
+      }
+    };
+  }
+  @action getStockpriceData = () => {
+      this.getData('/api/chart/stockprice', this.stockprice);
+      return this.weather;
+  }
+  @action getStockpriceLayout = () => {
+    return {
+      title: 'Stockprice',
       xaxis: {
         title: 'Year',
         showgrid: false,
