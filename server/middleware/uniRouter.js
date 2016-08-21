@@ -9,6 +9,7 @@ import { config } from '../../package.json';
 const jsLinks = [
     "https://code.jquery.com/jquery-2.2.4.min.js",
   "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js",
+  "https://cdn.plot.ly/plotly-latest.min.js",
   path.join(config.assetsPublicPath, 'vendor.bundle.js'),
   path.join(config.assetsPublicPath, 'main.bundle.js'),
 ];

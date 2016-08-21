@@ -2,6 +2,10 @@ import React, {Component} from "react";
 import {observer} from "mobx-react";
 
 export default class Chart extends Component {
+  componentDidMount() {
+    Plotly.newPlot('graphDiv', this.props.store.getData(), this.props.store.getLayout());
+  }
+
   render() {
     return (
     <div className="chart-wrapper">
@@ -10,7 +14,7 @@ export default class Chart extends Component {
       </div>
       <div className="chart-stage">
         <div id="grid-1-1">
-          <div id="graphDiv">{this.props.store.getData()}</div>
+          <div id="graphDiv"></div>
         </div>
       </div>
       <div className="chart-notes">
