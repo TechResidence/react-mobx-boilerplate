@@ -1,19 +1,21 @@
 import React, {Component} from "react";
 import {observer} from "mobx-react";
-import Plotly from "react-plotlyjs";
-import keenDashboardsStyles from '../keen-dashboards.css';
+import styles from '../styles.css';
 
 export default class Chart extends Component {
+  // componentDidMount() {
+  //   const Plotly = require('react-plotlyjs');
+  // }
   render() {
     return (
-      <div className={keenDashboardsStyles.chartWrapper}>
-        <div className={keenDashboardsStyles.chartTitle}>
+      <div className={styles.chartWrapper}>
+        <div className={styles.chartTitle}>
           {this.props.chartTitle}
         </div>
-        <div className={keenDashboardsStyles.chartStage}>
+        <div className={styles.chartStage}>
           <Plotly data={this.props.chartData} layout={this.props.chartLayout} />
         </div>
-        <div className={keenDashboardsStyles.chartNotes}>
+        <div className={styles.chartNotes}>
           {this.props.chartNotes}
         </div>
       </div>

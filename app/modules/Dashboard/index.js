@@ -5,7 +5,8 @@ import { observer } from 'mobx-react';
 @observer(["dashboardStore"])
 export default class Dashboard extends Component {
   render() {
-    <Charts store={this.props.dashboardStore} />
+    <div>aaa</div>
+    // <Charts store={this.props.dashboardStore} />
   }
 }
 
