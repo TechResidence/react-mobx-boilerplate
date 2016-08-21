@@ -4,6 +4,7 @@ useStrict();
 import { Provider } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
 import Header from 'components/Header';
+// import keenStaticStyles from './keen-static.css';
 import styles from './sharedStyles.css';
 
 import { store as noteStore } from './Notes';
