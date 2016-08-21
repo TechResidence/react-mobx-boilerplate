@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import Chart from './components/Chart';
 
-@observer(["noteStore"])
+@observer(["dashboardStore"])
 export default class Notes extends Component {
-  componentDidMount() {
-    this.props.noteStore.getNotesFromServer();
-  }
   
   render() {
     return (
-      <Chart store={this.props.noteStore} />
+      <Chart store={this.props.dashboardStore} />
     );
   }
 }
+
+export store from './store';
