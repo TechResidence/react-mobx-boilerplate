@@ -3,8 +3,7 @@ import {observer} from "mobx-react";
 import ReactGridLayout from 'react-grid-layout';
 import Chart from './Chart';
 
-export default class Charts extends Component {
-  render() {
+export default observer(function Charts({store}) {
     var gridLayout = [
       {i: 'a', x: 0, y: 0, w: 4, h: 2, static: true},
       {i: 'b', x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4},
@@ -24,5 +23,4 @@ export default class Charts extends Component {
         </div>
       </ReactGridLayout>
     );
-  }
-}
+});
