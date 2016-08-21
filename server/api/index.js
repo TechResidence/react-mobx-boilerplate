@@ -1,3 +1,4 @@
 import notes from './notes';
+import chart from './chart';
 
-export default [notes];
+export default [notes, chart];

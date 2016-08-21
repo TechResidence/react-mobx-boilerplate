@@ -5,8 +5,8 @@ import Chart from './components/Chart';
 
 @observer(["dashboardStore"])
 export default class Dashboard extends Component {
-// componentDidMount() {
-// }
+  componentDidMount() {
+  }
 
   render() {
     var gridLayout = [
@@ -18,15 +18,16 @@ export default class Dashboard extends Component {
     return (
       <ReactGridLayout className="layout" layout={gridLayout} cols={12} rowHeight={30} width={1200}>
         <div key={'a'}>
-          <Chart charttitle="1" notes="1" chartdata={this.props.dashboardStore.getData()} layout={this.props.dashboardStore.getLayout()} />
+          <Chart charttitle="1" notes="1" chartdata={this.props.dashboardStore.getWeatherData()} layout={this.props.dashboardStore.getWeatherLayout()} />
         </div>
         <div key={'b'}>
-          <Chart charttitle="1" notes="1" chartdata={this.props.dashboardStore.getData()} layout={this.props.dashboardStore.getLayout()} />
+          <Chart charttitle="1" notes="1" chartdata={this.props.dashboardStore.getWeatherData()} layout={this.props.dashboardStore.getWeatherLayout()} />
         </div>
         <div key={'c'}>
-          <Chart charttitle="1" notes="1" chartdata={this.props.dashboardStore.getData()} layout={this.props.dashboardStore.getLayout()} />
+          <Chart charttitle="1" notes="1" chartdata={this.props.dashboardStore.getWeatherData()} layout={this.props.dashboardStore.getWeatherLayout()} />
         </div>
       </ReactGridLayout>
+
     );
   }
 }

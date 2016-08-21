@@ -2,7 +2,7 @@ import { observable, action, autorun } from 'mobx';
 
 class NoteStore {
   @observable notes = [];
-  
+
   @action getNotesFromServer = () => {
     fetch('/api/notes')
       .then(
@@ -35,8 +35,8 @@ class NoteStore {
   sendJson(json, method = 'POST') {
     fetch('/api/notes', {
       method,
-      headers: {  
-        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"  
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
       },
       body: `json=${encodeURI(JSON.stringify(json))}`
     })

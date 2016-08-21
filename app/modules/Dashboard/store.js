@@ -1,23 +1,13 @@
-import {action} from "mobx";
+import { observable, action } from "mobx";
 
-class DashBoardStore {
+class DashboardStore {
+  @observable weather = [];
 
-  @action getData = () => {
-    var trace1 = {
-      x: [1, 2, 3, 4],
-      y: [10, 15, 13, 17],
-      type: 'scatter'
-    };
-
-    var trace2 = {
-      x: [1, 2, 3, 4],
-      y: [16, 5, 11, 9],
-      type: 'scatter'
-    };
-    return [trace1, trace2];
+  @action getWeatherData = () => {
+      this.getData('/api/chart/weather', this.weather);
+      return this.weather;
   }
-
-  @action getLayout = () => {
+  @action getWeatherLayout = () => {
     return {
       title: 'Sales Growth',
       xaxis: {
@@ -31,7 +21,16 @@ class DashBoardStore {
       }
     };
   }
+  getData(path, targetStore) {
+    fetch(path)
+    .then(r => r.status !== 200 ?
+      console.error(`Chart fetching error: ${r.status}`) :
+      r.json()
+    )
+    .then(action(data => { targetStore = data; }))
+    .catch(err => console.error(err));
+  }
 }
-let store = new DashBoardStore;
+let store = new DashboardStore;
 
 export default store;

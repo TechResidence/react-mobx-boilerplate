@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {observer} from "mobx-react";
-import Plotly from "react-plotlyjs";
+// import Plotly from "react-plotlyjs";
 import keenDashboardsStyles from '../keen-dashboards.css';
 
 export default class Chart extends Component {
@@ -11,7 +11,7 @@ export default class Chart extends Component {
         {this.props.charttitle}
       </div>
       <div className={keenDashboardsStyles.chartStage}>
-        <Plotly data={this.props.chartdata} layout={this.props.layout} />
+        // <Plotly data={this.props.chartdata} layout={this.props.layout} />
       </div>
       <div className={keenDashboardsStyles.chartNotes}>
         {this.props.notes}
