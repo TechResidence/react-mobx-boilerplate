@@ -7,8 +7,6 @@ import { config } from '../../package.json';
 
   // javascript links
 const jsLinks = [
-    "https://code.jquery.com/jquery-2.2.4.min.js",
-  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js",
   path.join(config.assetsPublicPath, 'vendor.bundle.js'),
   path.join(config.assetsPublicPath, 'main.bundle.js'),
 ];
@@ -16,7 +14,6 @@ const jsLinks = [
 // css links
 const cssLinks = [
   path.join(config.assetsPublicPath, 'styles.bundle.css'),
-  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
   "https://fonts.googleapis.com/css?family=Ubuntu:400,300italic,300,400italic,500,500italic,700,700italic"
 ];
 
