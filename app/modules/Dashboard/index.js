@@ -10,10 +10,10 @@ export default class Dashboard extends Component {
     <div className="container-fluid">
       <div className="row">
         <div className="col-sm-8">
-          <Chart store={this.props.dashboardStore} id="1"/>
+          <Chart store={this.props.dashboardStore} id="1" title="1" notes="1"/>
         </div>
         <div className="col-sm-4">
-          <Chart store={this.props.dashboardStore} id="2"/>
+          <Chart store={this.props.dashboardStore} id="2" title="1" notes="1"/>
         </div>
       </div>
     </div>
