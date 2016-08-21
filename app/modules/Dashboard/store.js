@@ -6,6 +6,7 @@ class DashboardStore {
 
   @action getWeatherData = () => {
       this.getData('/api/chart/weather', this.weather);
+      console.log(this.weather)
       return this.weather;
   }
   @action getWeatherLayout = () => {
@@ -24,7 +25,7 @@ class DashboardStore {
   }
   @action getStockpriceData = () => {
       this.getData('/api/chart/stockprice', this.stockprice);
-      return this.weather;
+      return this.stockprice;
   }
   @action getStockpriceLayout = () => {
     return {
