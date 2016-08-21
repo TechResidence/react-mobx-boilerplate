@@ -1,2 +1,4 @@
 node_modules
 .DS_Store
+server/server.bundle.js
+server/public/*.bundle.js
