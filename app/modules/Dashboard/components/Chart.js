@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {observer} from "mobx-react";
-import Plotly from "react-plotlyjs"
+import Plotly from "react-plotlyjs";
 import keenDashboardsStyles from '../keen-dashboards.css';
 
 export default class Chart extends Component {
