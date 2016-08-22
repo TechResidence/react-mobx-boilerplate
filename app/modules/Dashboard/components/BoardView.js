@@ -7,13 +7,12 @@ import ChartView from './ChartView';
 export default class BoardView extends Component {
   render() {
     var gridLayout = this.props.grid.getGridLayout();
-    var gridLayoutKey = ["a", "b", "c", "d", "e"]
-    var charts = this.props.chartList.charts;
+    var panels = this.props.panelList.panels;
     return (
       <ReactGridLayout className="layout" layout={gridLayout} cols={12} rowHeight={30} width={1200}>
-        { charts.map( (chart, idx) =>
-          <div key={gridLayoutKey[idx]}>
-            <ChartView chart={chart} />
+        { panels.map( (panel, idx) =>
+          <div key={panel["position"]}>
+            <ChartView chart={panel["chart"]} />
           </div>
         )}
       </ReactGridLayout>
