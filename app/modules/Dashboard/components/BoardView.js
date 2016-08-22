@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-// import { observable, action } from 'mobx';
-// import { observer } from "mobx-react";
+import { observer } from "mobx-react";
 import ReactGridLayout from 'react-grid-layout';
 import ChartView from './ChartView';
 
+@observer
 export default class BoardView extends Component {
   render() {
     var gridLayout = this.props.grid.getGridLayout();

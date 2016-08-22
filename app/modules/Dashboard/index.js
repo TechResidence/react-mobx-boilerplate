@@ -11,5 +11,3 @@ export default class Dashboard extends Component {
     );
   }
 }
-
-export store from './store';

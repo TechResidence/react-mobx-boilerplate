@@ -1,12 +1,19 @@
+import { observe, autorun, computed, toJS } from 'mobx';
 import React, {Component} from "react";
-import {observer} from "mobx-react";
+import { observer } from "mobx-react";
 import styles from '../styles.css';
 
+@observer
 export default class ChartView extends Component {
   state = { plot: null }
   componentDidMount() {
     const Plotly = require('react-plotlyjs');
-    this.setState({ plot: <Plotly data={this.props.chart.data} layout={this.props.chart.layout} /> });
+    let data = this.props.chart.data;
+    let layout = this.props.chart.layout;
+    this.setState({ plot: <Plotly data={toJS(data)} layout={layout} /> });
+    autorun( () => {
+      this.setState({ plot: <Plotly data={toJS(data)} layout={layout} /> });
+    });
   }
   render() {
     return (
