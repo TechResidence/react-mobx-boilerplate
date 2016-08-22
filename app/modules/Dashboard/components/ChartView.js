@@ -2,23 +2,23 @@ import React, {Component} from "react";
 import {observer} from "mobx-react";
 import styles from '../styles.css';
 
-export default class Chart extends Component {
+export default class ChartView extends Component {
   state = { plot: null }
   componentDidMount() {
     const Plotly = require('react-plotlyjs');
-    this.setState({ plot: <Plotly data={this.props.chartData} layout={this.props.chartLayout} /> });
+    this.setState({ plot: <Plotly data={this.props.chart.data} layout={this.props.chart.layout} /> });
   }
   render() {
     return (
       <div className={styles.chartWrapper}>
         <div className={styles.chartTitle}>
-          {this.props.chartTitle}
+          {this.props.chart.title}
         </div>
         <div className={styles.chartStage}>
           {this.state.plot}
         </div>
         <div className={styles.chartNotes}>
-          {this.props.chartNotes}
+          {this.props.chart.notes}
         </div>
       </div>
     );

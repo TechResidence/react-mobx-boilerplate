@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-import Board from './components/Board'
-import Charts from './components/Charts'
+import BoardView from './components/BoardView'
+import ChartsView from './components/ChartsView'
+import ChartList from './stores/ChartList'
+import Grid from './stores/Grid'
 
-@observer(["dashboardStore"])
 export default class Dashboard extends Component {
+  componentDidMount() {
+    console.log("index");
+    console.log(ChartList.charts);
+  }
   render() {
     return (
-      <Board store={this.props.dashboardStore} />
+      <div>
+        index
+        <ChartsView chartList={ChartList} grid={Grid}/>
+      </div>
     );
   }
 }

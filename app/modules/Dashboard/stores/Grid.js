@@ -6,11 +6,9 @@ class Grid {
   ];
 
   getGridLayout() {
-    console.log(this.gridLayout);
     return this.gridLayout;
   }
 }
-
 let store = new Grid;
 
 export default store;
