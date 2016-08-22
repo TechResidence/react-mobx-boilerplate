@@ -6,7 +6,6 @@ class DashboardStore {
 
   @action getWeatherData = () => {
       this.getData('/api/chart/weather', this.weather);
-      console.log(this.weather)
       return this.weather;
   }
   @action getWeatherLayout = () => {
@@ -47,7 +46,7 @@ class DashboardStore {
       console.error(`Chart fetching error: ${r.status}`) :
       r.json()
     )
-    .then(action(data => { targetStore = data; }))
+    .then(action(data => { console.log(data); targetStore = data; }))
     .catch(err => console.error(err));
   }
 }
